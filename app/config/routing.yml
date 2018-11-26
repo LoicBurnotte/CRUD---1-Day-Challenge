@@ -1,0 +1,3 @@
+collection:
+    resource: "@CollectionBundle/Resources/config/routing.yml"
+    prefix:   /collection

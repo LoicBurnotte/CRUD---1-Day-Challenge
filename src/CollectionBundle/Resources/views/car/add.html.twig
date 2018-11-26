@@ -1,0 +1,93 @@
+{% extends '@Collection/layout.html.twig' %}
+
+{% block title %}Add New Car{% endblock %}
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-6 offset-3">
+                <h1>Add new car :</h1>
+                <div class="newCar">
+
+                    {#{{form_start(form)}}#}
+
+                    {#{{form_label(form.garage)}}#}
+
+                    {#<ul id="{{form.garage.vars.id}}" >#}
+                        {#{% for garageForm in form.garage %}#}
+                            {#{{ dump(garageForm) }}#}
+
+                            {#<li>#}
+                                {#{{form_widget(garageForm)}} #}{#la checkbox#}
+                                {#{% set entity= form.garage.vars.choices[garageForm.vars.value].data %}#}
+                                {#{{ dump(entity) }}#}
+                                {# la variable "entity" correspond à ton entité "Garage" #}
+                                {#<label for="{{entity.id}}">#}
+                                    {#{{entity.name}}#}
+                                    {#{{ entity.name }}#}
+                                    {#<img src="{{entity.imgUrl}}" />#}
+                                {#</label>#}
+                            {#</li>#}
+                        {#{%endfor%}#}
+                    {#</ul>#}
+                    {#{% do form.garage.setRendered(true) %} #}{#pour que ce champ n'apparaisse pas dans le form_rest#}
+
+                    {#{{ form_errors(form.garage) }}#}
+
+                    {#{{ form_end(form) }}#}
+
+
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
+                    {#{{ form_row(form.mark) }}#}
+                    {#{{ form_row(form.model) }}#}
+                    {#{{ form_row(form.dateConstruction) }}#}
+                    {#{{ form_row(form.picturePath) }}#}
+                    {#{{ form_row(form.price) }}#}
+                    {#{{ form_row(form.datePurchase) }}#}
+                    {#{{ form_row(form.serialNumber) }}#}
+                    {#{{ form_row(form.category) }}#}
+
+                    {#   N'afficher que les garages qui ne sont pas vides :    #}
+                    {#{{ dump(form.garage.vars.choices) }}#}
+                    {#{{ form_label(form.garage) }}#}
+                    {#{% for i,choice in form.garage.vars.choices if choice.data.capacity != choice.data.car|length %}#}
+                        {#<li>{{ form_widget(choice.label) }}</li>#}
+
+                             {#{% do form.garage.setRendered() %}#}
+
+                            {#{{ dump(choice.label) }}#}
+                            {# <div class="hiddenClass">#}
+                            {#{{ form_widget(form.garage.setRendered()) }}#}
+                            {#{{ form_widget(form.garage, { 'attr': {'class': 'hidden-row'}})  }}#}
+                            {# </div>#}
+                            {#{{ choice, {'class': 'hiddenClass'} }}#}
+
+                            {#{{ form_widget(form.garage, {'choices': {'label': choice}}) }}#}
+
+                            {#{{ form_widget(form.garage) }}#}
+
+                            {#{{ form_row(form.garage.vars ,{'label' : choice.label}) }}#}
+                            {#{{ dump(choice.label) }}#}
+                             {#{{ form_row(form.garage.vars.choices, {'label' : choice.label}) }}#}
+                            {# {{ form_row(form.garage.vars, {'choices': choice.label}) }}#}
+                            {#{{ form_row(form.garage, {'vars': {'choices': {'label': "coucou"}}} ) }}#}
+                            {#{{ form_widget(form.garage, {'choices': {'label': choice}}) }}#}
+                            {#form.garage.vars.choices[i] #}
+
+                    {#{% endfor %}#}
+                    {#{{ form_widget(form.garage, {'choices': form.garage.vars.choices}) }}#}
+                    {#{{ form_row(form.garage) }}#}
+                    {{ form_end(form)}}
+                </div>
+                <br>
+                <a href="{{ path('collection_home') }}"><i class="fas fa-arrow-circle-left"></i> Home</a> -
+                <a href="{{ path('collection_car_read') }}">All cars <i class="fas fa-arrow-circle-right"></i></a>
+                <br><br>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}{% endblock %}

@@ -1,0 +1,92 @@
+collection_home:
+    path: /
+    defaults:
+        _controller: CollectionBundle:Garage:read
+    methods: [ GET ]
+
+##########################   CAR    ##############################
+collection_car_add:
+    path: /car/add
+    defaults:
+        _controller: CollectionBundle:Car:add
+    methods: [ GET, POST ]
+
+collection_car_edit:
+    path: /car/edit/{carID}
+    defaults:
+        _controller: CollectionBundle:Car:edit
+    requirements:
+        carID: \d+
+    methods: [ GET, POST ]
+
+collection_car_read:
+    path: /car/read
+    defaults:
+        _controller: CollectionBundle:Car:read
+    methods: [ GET ]
+
+collection_car_remove:
+    path: /car/remove/{carID}
+    defaults:
+        _controller: CollectionBundle:Car:remove
+    requirements:
+        carID: \d+
+    methods: [ GET ]
+
+##########################   GARAGE    ##############################
+collection_garage_add:
+    path: /garage/add
+    defaults:
+        _controller: CollectionBundle:Garage:add
+    methods: [ GET, POST ]
+
+collection_garage_edit:
+    path: /garage/edit/{garageID}
+    defaults:
+        _controller: CollectionBundle:Garage:edit
+    requirements:
+        garageID: \d+
+    methods: [ GET, POST ]
+
+#collection_garage_read:
+#    path: /garage/read
+#    defaults:
+#        _controller: CollectionBundle:Garage:read
+#    methods: [ GET ]
+
+collection_garage_remove:
+    path: /garage/remove/{garageID}
+    defaults:
+        _controller: CollectionBundle:Garage:remove
+    requirements:
+        garageID: \d+
+    methods: [ GET ]
+
+##########################   CATEGORY    ##############################
+collection_category_add:
+    path: /category/add
+    defaults:
+        _controller: CollectionBundle:Category:add
+    methods: [ GET, POST ]
+
+collection_category_edit:
+    path: /category/edit/{categoryID}
+    defaults:
+        _controller: CollectionBundle:Category:edit
+    requirements:
+        categoryID: \d+
+    methods: [ GET, POST ]
+
+collection_category_read:
+    path: /category/read
+    defaults:
+        _controller: CollectionBundle:Category:read
+    methods: [ GET ]
+
+collection_category_remove:
+    path: /category/remove/{categoryID}
+    defaults:
+        _controller: CollectionBundle:Category:remove
+    requirements:
+        categoryID: \d+
+    methods: [ GET ]

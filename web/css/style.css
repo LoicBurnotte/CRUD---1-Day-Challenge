@@ -1,0 +1,26 @@
+#title{
+    text-decoration: underline;
+    font-family:monospace;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: solid 2px;
+    border-radius: 10px;
+    background-color: #0096ED;
+    color: white;
+    padding: 10px;
+}
+
+.custom-submit{
+    width: 200px;
+    background-color: red;
+    color: white;
+}
+.carPicture{
+    width: 100px;
+}
+.red{
+    color: red;
+}
+.hiddenClass{
+    display:none;
+}

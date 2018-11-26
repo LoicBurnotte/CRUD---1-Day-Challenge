@@ -1,0 +1,41 @@
+{% extends '@Collection/layout.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-6 offset-3">
+                <h1>Categories</h1>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Created</th>
+                        <th>Modified</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    {% for category in categories %}
+                        <tbody>
+                        <tr>
+                            <td>{{ category.name }}</td>
+                            <td>{{ category.createdAt|date('d-m-Y') }}</td>
+                            <td>{{ category.modifyAt|date('d-m-Y') }}</td>
+                            <td><a href="{{ path('collection_category_edit', {'categoryID' : category.id }) }}"><i class="far fa-edit"></i></a></td>
+                            <td><a href="{{ path('collection_category_remove', {'categoryID' : category.id }) }}" onclick="if(!confirm('Delete category?')) {return false;}"><i class="far fa-trash-alt red"></i></a></td>
+                        </tr>
+                        </tbody>
+                    {% endfor %}
+                </table>
+                <a href="{{ path('collection_category_add') }}"><button type="button" class="btn btn-primary btn-lg">ADD CATEGORY</button></a>
+                <br><br>
+                <a href="{{ path('collection_home') }}"><i class="fas fa-arrow-circle-left"></i> Home</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}{% endblock %}
